@@ -1,8 +1,13 @@
-fn main() {
-    println!("EyeCrypt Alpha - Experimental Decoder Branch!");
-    experimental_decoder();
-}
+mod app;
 
-fn experimental_decoder() {
-    println!("Decoding logic goes here...");
+use eframe::NativeOptions;
+
+fn main() -> Result<(), eframe::Error> {
+    let options = NativeOptions::default();
+
+    eframe::run_native(
+        "EyeCrypt",
+        options,
+        Box::new(|cc| Ok(Box::new(app::EyeCryptApp::new(cc)))),
+    )
 }
