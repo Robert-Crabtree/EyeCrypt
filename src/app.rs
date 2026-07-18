@@ -2,12 +2,14 @@ use eframe::egui;
 
 pub struct EyeCryptApp {
     version: &'static str,
+    dataset: Option<crate::model::Dataset>,
 }
 
 impl EyeCryptApp {
     pub fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         Self {
             version: "0.1.0",
+            dataset: None,
         }
     }
 }
